@@ -1,0 +1,27 @@
+.fe-block-556fe2fa3418be2b2850 img{
+  z-index:999998!important;
+  width:250px!important;
+  height:250px!important;
+  position:relative!important;
+  }
+  
+.fe-block-556fe2fa3418be2b2850 {
+  position: relative;
+  z-index: 999998;
+}
+
+.sqs-block-image.charm{
+    min-width:250px!important;
+    min-height:250px!important;
+    z-index: 9999999!important;
+  }
+  
+.sqs-block-image.charm img{
+    min-width:250px!important;
+    min-height:250px!important;
+    z-index: 9999999!important;
+  }
+
+body, html{
+  overflow-x:hidden;
+  }
