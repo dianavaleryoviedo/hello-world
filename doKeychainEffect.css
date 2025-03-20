@@ -6,8 +6,8 @@
   }
 
 .fe-block-yui_3_17_2_1_1742432571711_6178 {
-  position: relative;
-  z-index: 999998;
+  position: relative!important;
+  z-index: 999998!important;
 }
 
 .sqs-block-image.charm{
@@ -23,5 +23,5 @@
   }
 
 body, html{
-  overflow-x:hidden;
+  overflow-x: hidden!important;
   }
