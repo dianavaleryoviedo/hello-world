@@ -21,7 +21,3 @@
     min-height:250px!important;
     z-index: 9999999!important;
   }
-
-body, html{
-  overflow-x: hidden!important;
-  }
