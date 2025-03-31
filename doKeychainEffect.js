@@ -1,1 +1,89 @@
-function _0x45ce(){const _0x3ac512=['toLowerCase','.sqs-block-image.charm','tamagotchi','alt','.sqs-block-image','8plQVtD','5wWaKZH','querySelectorAll','addEventListener','classList','bottom\x20top','add','.sqs-block-image\x20img','964113qvjWww','includes','charm','12709730qqRBDY','222721jesWbL','599056qwEUge','closest','length','DOMContentLoaded','5005017wWhSHC','427pmhshW','create','155448dxEngH','54612IQpxab','forEach','set'];_0x45ce=function(){return _0x3ac512;};return _0x45ce();}const _0x50fa13=_0x302b;function _0x302b(_0x32aac1,_0x160e82){const _0x45ce4f=_0x45ce();return _0x302b=function(_0x302b75,_0x2359e9){_0x302b75=_0x302b75-0x10b;let _0x2c2653=_0x45ce4f[_0x302b75];return _0x2c2653;},_0x302b(_0x32aac1,_0x160e82);}(function(_0x55a66c,_0x528118){const _0x156e31=_0x302b,_0x199d68=_0x55a66c();while(!![]){try{const _0x2538fd=-parseInt(_0x156e31(0x126))/0x1+parseInt(_0x156e31(0x111))/0x2+parseInt(_0x156e31(0x122))/0x3+parseInt(_0x156e31(0x127))/0x4*(parseInt(_0x156e31(0x11b))/0x5)+-parseInt(_0x156e31(0x112))/0x6*(parseInt(_0x156e31(0x10f))/0x7)+-parseInt(_0x156e31(0x11a))/0x8*(parseInt(_0x156e31(0x10e))/0x9)+parseInt(_0x156e31(0x125))/0xa;if(_0x2538fd===_0x528118)break;else _0x199d68['push'](_0x199d68['shift']());}catch(_0x1f2507){_0x199d68['push'](_0x199d68['shift']());}}}(_0x45ce,0x76990),document[_0x50fa13(0x11d)](_0x50fa13(0x10d),()=>{const _0x17213a=_0x50fa13;gsap['registerPlugin'](ScrollTrigger),document['querySelectorAll'](_0x17213a(0x121))[_0x17213a(0x113)](_0x18c6c6=>{const _0x4cf008=_0x17213a,_0x4f9474=_0x18c6c6[_0x4cf008(0x118)]?_0x18c6c6['alt'][_0x4cf008(0x115)]():'',_0x1261b7=_0x18c6c6[_0x4cf008(0x10b)](_0x4cf008(0x119));_0x1261b7&&(_0x4f9474[_0x4cf008(0x123)](_0x4cf008(0x124))&&_0x1261b7[_0x4cf008(0x11e)][_0x4cf008(0x120)]('charm'),_0x4f9474[_0x4cf008(0x123)](_0x4cf008(0x117))&&_0x1261b7[_0x4cf008(0x11e)][_0x4cf008(0x120)](_0x4cf008(0x117)));});const _0x328b53=document[_0x17213a(0x11c)]('.sqs-block-image.tamagotchi'),_0x4de378=document['querySelectorAll'](_0x17213a(0x116));if(0x0===_0x328b53[_0x17213a(0x10c)]||0x0===_0x4de378[_0x17213a(0x10c)])return void console['warn']('Tamagotchi\x20reference\x20images\x20or\x20charm\x20images\x20not\x20found!');_0x328b53[_0x17213a(0x113)](_0x31f6bf=>{const _0x10965e=_0x17213a;ScrollTrigger[_0x10965e(0x110)]({'trigger':_0x31f6bf,'start':'bottom\x20bottom','endTrigger':_0x4de378[_0x4de378[_0x10965e(0x10c)]-0x1],'end':_0x10965e(0x11f),'pin':_0x31f6bf,'pinSpacing':!0x1,'scrub':0x1});}),_0x4de378[_0x17213a(0x113)](_0x30f02e=>{const _0x5e7762=_0x17213a;ScrollTrigger['create']({'trigger':_0x30f02e,'start':()=>'top\x20bottom-=250','end':'bottom\x20top','pin':_0x30f02e,'pinSpacing':!0x1,'scrub':0x1}),gsap[_0x5e7762(0x114)](_0x30f02e,{'x':0xc8});});}));
+document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Add class based on alt text content for image blocks
+  document.querySelectorAll('.sqs-block-image img').forEach(img => {
+    const altText = img.alt ? img.alt.toLowerCase() : '';
+    const imageBlock = img.closest('.sqs-block-image');
+
+    if (!imageBlock) return;
+
+    if (altText.includes('charm')) {
+      imageBlock.classList.add('charm');
+    }
+    if (altText.includes('tamagotchi')) {
+      imageBlock.classList.add('tamagotchi');
+    }
+  });
+
+  // Find reference blocks (Tamagotchi images)
+  const referenceBlocks = document.querySelectorAll('#floating-image');
+  const charmImages = document.querySelectorAll('.sqs-block-image.charm');
+
+  if (!referenceBlocks.length || !charmImages.length) {
+    console.warn("Tamagotchi reference images or charm images not found!");
+    return;
+  }
+
+  // Pin each charm image when it reaches the top of the nearest Tamagotchi reference block
+  charmImages.forEach(imageBlock => {
+    ScrollTrigger.create({
+      trigger: imageBlock,
+      start: "top bottom-=225",
+      end: "bottom top",
+      pin: imageBlock,
+      pinSpacing: false,
+      anticipatePin: 1,
+      scrub: false,
+      onToggle: self => {
+        // Add .pinned class when the image is pinned, remove when unpinned
+        if (self.isActive) {
+          imageBlock.classList.add('pinned');
+        } else {
+          imageBlock.classList.remove('pinned');
+        }
+      }
+    });
+  });
+
+  // Handle floating image behavior
+  const floatingImage = document.querySelector("#floating-image");
+  const footer = document.querySelector("footer");
+  
+  if (!floatingImage || !footer) return;
+
+  // Function to update floating image position
+  function updatePosition() {
+    const viewportHeight = window.innerHeight;
+    const imageHeight = floatingImage.offsetHeight;
+    const footerTop = footer.getBoundingClientRect().top;
+    
+    // If footer is close to or in the viewport
+    if (footerTop < viewportHeight) {
+      // Calculate absolute position to "dock" at footer top
+      const absoluteTop = window.pageYOffset + footerTop - imageHeight;
+      
+      // Switch to absolute positioning
+      floatingImage.style.position = "absolute";
+      floatingImage.style.bottom = "auto";
+      floatingImage.style.top = absoluteTop + "px";
+    } else {
+      // Switch back to fixed positioning
+      floatingImage.style.position = "fixed";
+      floatingImage.style.top = "auto";
+      floatingImage.style.bottom = "20px";
+    }
+  }
+
+  // Initial check for floating image position
+  updatePosition();
+  
+  // Update floating image position on scroll and resize
+  window.addEventListener("scroll", updatePosition);
+  window.addEventListener("resize", updatePosition);
+
+  // Refresh ScrollTriggers if necessary (e.g., on window resize)
+  window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+  });
+});
