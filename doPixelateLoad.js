@@ -1,1 +1,79 @@
-(function(_0x553d0c,_0x4cbfe5){const _0x24ff81=_0x1a02,_0x57f6b3=_0x553d0c();while(!![]){try{const _0xbff4cd=parseInt(_0x24ff81(0x1d1))/0x1+-parseInt(_0x24ff81(0x1e8))/0x2+parseInt(_0x24ff81(0x1d2))/0x3*(-parseInt(_0x24ff81(0x1e3))/0x4)+-parseInt(_0x24ff81(0x1f0))/0x5*(parseInt(_0x24ff81(0x1e0))/0x6)+-parseInt(_0x24ff81(0x1ed))/0x7*(-parseInt(_0x24ff81(0x1db))/0x8)+parseInt(_0x24ff81(0x1fa))/0x9*(-parseInt(_0x24ff81(0x1d6))/0xa)+-parseInt(_0x24ff81(0x1d0))/0xb*(-parseInt(_0x24ff81(0x1e4))/0xc);if(_0xbff4cd===_0x4cbfe5)break;else _0x57f6b3['push'](_0x57f6b3['shift']());}catch(_0x47df83){_0x57f6b3['push'](_0x57f6b3['shift']());}}}(_0x6144,0xc82a5),document['addEventListener']('DOMContentLoaded',()=>{const _0x20f5af=_0x1a02,_0x5a4693=new IntersectionObserver(_0x58eabe=>{const _0x93ca5a=_0x1a02;_0x58eabe[_0x93ca5a(0x1f4)](_0x175c74=>{const _0x2cdadf=_0x93ca5a;_0x175c74[_0x2cdadf(0x1f7)]&&_0x427df5(_0x175c74[_0x2cdadf(0x1e7)]);});},{'root':null,'rootMargin':_0x20f5af(0x1f6),'threshold':0x0});function _0x427df5(_0x33a5a1){const _0xad6de7=_0x20f5af;_0x33a5a1[_0xad6de7(0x1f5)]['visibility']=_0xad6de7(0x1f8);const _0x3f4321=document[_0xad6de7(0x1eb)]('canvas'),_0x29ed99=_0x3f4321[_0xad6de7(0x1f2)]('2d'),_0x1cf1f0=_0x33a5a1[_0xad6de7(0x1e2)];_0x3f4321[_0xad6de7(0x1d4)]=_0x33a5a1[_0xad6de7(0x1f9)],_0x3f4321[_0xad6de7(0x1d5)]=_0x33a5a1[_0xad6de7(0x1dd)],_0x29ed99['imageSmoothingEnabled']=![],_0x3f4321['style'][_0xad6de7(0x1ee)]=_0xad6de7(0x1f1),_0x3f4321[_0xad6de7(0x1f5)][_0xad6de7(0x1d9)]=_0x33a5a1[_0xad6de7(0x1f3)]+'px',_0x3f4321['style'][_0xad6de7(0x1e9)]=_0x33a5a1['offsetLeft']+'px',_0x1cf1f0[_0xad6de7(0x1da)](_0x3f4321,_0x33a5a1);const _0x10fbdb=new Image();_0x10fbdb[_0xad6de7(0x1dc)]=_0xad6de7(0x1d7),_0x10fbdb['src']=_0x33a5a1[_0xad6de7(0x1d3)];const _0x5bb503=_0x102499=>{const _0x367d13=_0xad6de7,_0x37572e=_0x3f4321[_0x367d13(0x1d4)]*_0x102499,_0x488702=_0x3f4321['height']*_0x102499;_0x29ed99[_0x367d13(0x1ea)](0x0,0x0,_0x3f4321[_0x367d13(0x1d4)],_0x3f4321[_0x367d13(0x1d5)]),_0x29ed99[_0x367d13(0x1e5)](_0x10fbdb,0x0,0x0,_0x37572e,_0x488702),_0x29ed99[_0x367d13(0x1e5)](_0x3f4321,0x0,0x0,_0x37572e,_0x488702,0x0,0x0,_0x3f4321[_0x367d13(0x1d4)],_0x3f4321[_0x367d13(0x1d5)]);};_0x10fbdb['onload']=function(){_0x5bb503(0.08),setTimeout(()=>{_0x5bb503(0.1),setTimeout(()=>{_0x5bb503(0.05),setTimeout(()=>{const _0x5746a8=_0x1a02;_0x3f4321[_0x5746a8(0x1cf)](),_0x33a5a1['style'][_0x5746a8(0x1ef)]=_0x5746a8(0x1e1);},0x12c);},0x64);},0x96);},_0x10fbdb[_0xad6de7(0x1ce)]=function(){const _0x40e832=_0xad6de7;console[_0x40e832(0x1df)](_0x40e832(0x1e6)+_0x33a5a1[_0x40e832(0x1d3)]),_0x3f4321[_0x40e832(0x1cf)](),_0x33a5a1[_0x40e832(0x1f5)][_0x40e832(0x1ef)]='visible';};}const _0x1fb82b=()=>{const _0x5b1c7c=_0x20f5af;document[_0x5b1c7c(0x1ec)](_0x5b1c7c(0x1d8))[_0x5b1c7c(0x1f4)](_0xfaa2a=>{const _0x4fb4b1=_0x5b1c7c;!_0xfaa2a[_0x4fb4b1(0x1de)]['contains']('pixelated')&&(_0xfaa2a['classList'][_0x4fb4b1(0x1cd)]('pixelated'),_0x5a4693['observe'](_0xfaa2a));});};_0x1fb82b();const _0x3af2b4=new MutationObserver(()=>{_0x1fb82b();});_0x3af2b4[_0x20f5af(0x1fb)](document['body'],{'childList':!![],'subtree':!![]});}));function _0x1a02(_0x3d3b82,_0x3daa65){const _0x614436=_0x6144();return _0x1a02=function(_0x1a02bb,_0x1f4e92){_0x1a02bb=_0x1a02bb-0x1cd;let _0x35896c=_0x614436[_0x1a02bb];return _0x35896c;},_0x1a02(_0x3d3b82,_0x3daa65);}function _0x6144(){const _0x2150d9=['style','0px','isIntersecting','hidden','offsetWidth','54kgoDBG','observe','add','onerror','remove','1496dkdwyg','1377840cyhgsE','75TdBKwS','src','width','height','1203950oHxNGK','anonymous','.homepage\x20.sqs-block-image\x20img[alt*=\x22pixelate\x22]','top','insertBefore','392024JhPmmn','crossOrigin','offsetHeight','classList','error','24tyWJJx','visible','parentNode','171356pZuzcR','87996TtDjMJ','drawImage','Failed\x20to\x20load\x20image:\x20','target','454882hcRgdL','left','clearRect','createElement','querySelectorAll','91FaoNQc','position','visibility','214380ekdWXD','absolute','getContext','offsetTop','forEach'];_0x6144=function(){return _0x2150d9;};return _0x6144();}
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                applyPixelation(entry.target);
+            }
+        });
+    }, { root: null, rootMargin: "0px", threshold: 0 });
+
+    function applyPixelation(img) {
+        img.style.visibility = "hidden";
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const parent = img.parentNode;
+
+        canvas.width = img.offsetWidth;
+        canvas.height = img.offsetHeight;
+        ctx.imageSmoothingEnabled = false;
+
+        // Position canvas over the image
+        canvas.style.position = "absolute";
+        canvas.style.top = img.offsetTop + "px";
+        canvas.style.left = img.offsetLeft + "px";
+
+        parent.insertBefore(canvas, img);
+
+        const tempImg = new Image();
+        tempImg.crossOrigin = "anonymous";
+        tempImg.src = img.src;
+
+        const pixelate = (factor) => {
+            const w = canvas.width * factor;
+            const h = canvas.height * factor;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(tempImg, 0, 0, w, h);
+            ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
+        };
+
+        tempImg.onload = function () {
+            pixelate(0.08);
+            setTimeout(() => {
+                pixelate(0.1);
+                setTimeout(() => {
+                    pixelate(0.05);
+                    setTimeout(() => {
+                        canvas.remove();
+                        img.style.visibility = "visible";
+                    }, 300);
+                }, 100);
+            }, 150);
+        };
+
+        tempImg.onerror = function () {
+            console.error("Failed to load image: " + img.src);
+            canvas.remove();
+            img.style.visibility = "visible";
+        };
+    }
+
+    // Function to observe all matching images
+    const observeImages = () => {
+        document.querySelectorAll('.homepage .sqs-block-image img[alt*="pixelate"]').forEach(img => {
+            if (!img.classList.contains("pixelated")) {
+                img.classList.add("pixelated");
+                observer.observe(img);
+            }
+        });
+    };
+
+    observeImages(); // Initial observation
+
+    // MutationObserver to detect dynamically added images
+    const mutationObserver = new MutationObserver(() => {
+        observeImages();
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+});
