@@ -1,23 +1,25 @@
-.fe-block-yui_3_17_2_1_1742432571711_6178 img{
-  z-index:999998!important;
-  width:262.48px!important;
-  height:215.52px!important;
-  position:relative!important;
-  }
-
-.fe-block-yui_3_17_2_1_1742432571711_6178 {
-  position: relative!important;
-  z-index: 999998!important;
+img[alt="charm"], img[alt="tamagotchi"] {
+  pointer-events: none!important;
 }
 
-.sqs-block-image.charm{
-    min-width:250px!important;
-    min-height:250px!important;
-    z-index: 9999999!important;
+#floating-image {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 200px!important;
+  height: auto!important;
+  z-index: 999;
+}
+
+.sqs-block-image.charm {
+  width: 400px; 
+  z-index: 99999999999!important;
+  height: 200px; 
+  position: absolute; 
+  right: 20px;  
   }
   
-.sqs-block-image.charm img{
-    min-width:250px!important;
-    min-height:250px!important;
-    z-index: 9999999!important;
+
+.fe-block-yui_3_17_2_1_1742434104533_8656, .fe-block_3_17_2_1_1742434104533_2652, .fe-block-yui_3_17_2_1_1742434104533_6893, .fe-block-yui_3_17_2_1_1742434104533_8092, .fe-block-yui_3_17_2_1_1742434104533_9359, .fe-block-yui_3_17_2_1_1742434104533_10539, .fe-block-yui_3_17_2_1_1742434104533_11069{
+   z-index: 99999999999!important;
   }
