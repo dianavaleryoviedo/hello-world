@@ -1,7 +1,3 @@
-img[alt="charm"], img[alt="tamagotchi"] {
-  pointer-events: none!important;
-}
-
 #floating-image {
   position: fixed;
   bottom: 20px;
