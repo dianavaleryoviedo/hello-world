@@ -1,6 +1,6 @@
 #floating-image {
   position: fixed;
-  bottom: 20px;
+  bottom: 0px;
   right: 20px;
   width: 200px!important;
   height: auto!important;
