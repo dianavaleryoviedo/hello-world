@@ -32,6 +32,6 @@ img[alt="tamagotchi"] {
   100% { transform: rotate(0deg); }
 }
 
-.sqs-block-iamge.charm:hover {
+.sqs-block-image.charm:hover {
   animation: wiggle 2.5s infinite;
 }
