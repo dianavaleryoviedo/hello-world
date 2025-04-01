@@ -7,6 +7,12 @@
   z-index: 999;
 }
 
+@media only screen and (max-width:800px){
+ #floating-image{
+  display:none!important;
+ }
+}
+
 .sqs-block-image.charm {
   width: 400px; 
   z-index: 99999999999!important;
