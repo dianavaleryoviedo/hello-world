@@ -18,6 +18,9 @@
 
 .fe-block-yui_3_17_2_1_1742434104533_8656, .fe-block_3_17_2_1_1742434104533_2652, .fe-block-yui_3_17_2_1_1742434104533_6893, .fe-block-yui_3_17_2_1_1742434104533_8092, .fe-block-yui_3_17_2_1_1742434104533_9359, .fe-block-yui_3_17_2_1_1742434104533_10539, .fe-block-yui_3_17_2_1_1742434104533_11069{
    z-index: 99999999999!important;
+  }
+
+.fe-block-yui_3_17_2_1_1742434104533_8656:hover, .fe-block_3_17_2_1_1742434104533_2652:hover, .fe-block-yui_3_17_2_1_1742434104533_6893:hover, .fe-block-yui_3_17_2_1_1742434104533_8092:hover, .fe-block-yui_3_17_2_1_1742434104533_9359:hover, .fe-block-yui_3_17_2_1_1742434104533_10539:hover, .fe-block-yui_3_17_2_1_1742434104533_11069:hover{
   animation: wiggle 500ms infinite!important;
   }
 
