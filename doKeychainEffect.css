@@ -20,6 +20,18 @@
    z-index: 99999999999!important;
   }
 
-img[alt="charm"], img[alt="tamagotchi"] {
+img[alt="tamagotchi"] {
   pointer-events: none!important;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+img[alt="charm"]:hover {
+  animation: wiggle 2.5s infinite;
 }
