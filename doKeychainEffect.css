@@ -20,18 +20,6 @@
    z-index: 99999999999!important;
   }
 
-.fe-block-yui_3_17_2_1_1742434104533_8656:hover, .fe-block_3_17_2_1_1742434104533_2652:hover, .fe-block-yui_3_17_2_1_1742434104533_6893:hover, .fe-block-yui_3_17_2_1_1742434104533_8092:hover, .fe-block-yui_3_17_2_1_1742434104533_9359:hover, .fe-block-yui_3_17_2_1_1742434104533_10539:hover, .fe-block-yui_3_17_2_1_1742434104533_11069:hover{
-  animation: wiggle 500ms infinite!important;
-  }
-
-img[alt="tamagotchi"] {
+img[alt="Tamagotchi"], img[alt="charm"] {
   pointer-events: none!important;
-}
-
-@keyframes wiggle {
-    0% { transform: rotate(0deg); }
-   80% { transform: rotate(0deg); }
-   85% { transform: rotate(2deg); }
-   95% { transform: rotate(-2deg); }
-  100% { transform: rotate(0deg); }
 }
