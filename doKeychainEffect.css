@@ -18,7 +18,7 @@
 
 .fe-block-yui_3_17_2_1_1742434104533_8656, .fe-block_3_17_2_1_1742434104533_2652, .fe-block-yui_3_17_2_1_1742434104533_6893, .fe-block-yui_3_17_2_1_1742434104533_8092, .fe-block-yui_3_17_2_1_1742434104533_9359, .fe-block-yui_3_17_2_1_1742434104533_10539, .fe-block-yui_3_17_2_1_1742434104533_11069{
    z-index: 99999999999!important;
-  animation: wiggle 2.5s infinite;
+  animation: wiggle 2.5s infinite!important;
   }
 
 img[alt="tamagotchi"] {
