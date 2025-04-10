@@ -6,9 +6,8 @@
     z-index: 2;
   }
 
-  /* Ensure image containers allow absolute positioning */
-  img.summary-thumbnail-image,
-  img.summary-thumbnail-image-alternate {
+  /* Ensure images inside summary-thumbnail-outer-container allow absolute positioning */
+  .summary-thumbnail-outer-container img {
     position: relative;
     display: block;
   }
