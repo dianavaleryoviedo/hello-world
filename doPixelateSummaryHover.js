@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(
-        'img.summary-thumbnail-image.loaded, img.summary-thumbnail-image.summary-thumbnail-image-alternate.loaded'
-    ).forEach(img => {
+    document.querySelectorAll('.sqs-block-summary-v2 img').forEach(img => {
         let isAnimating = false;
 
         const applyPixelation = () => {
@@ -19,11 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
             canvas.height = img.offsetHeight;
             ctx.imageSmoothingEnabled = false;
 
-            // Position canvas absolutely over the image
-            canvas.style.width = img.offsetWidth + "px";
-            canvas.style.height = img.offsetHeight + "px";
-
-            parent.style.position = 'relative'; // make sure parent is positioned
+            // Ensure the parent element is positioned relative
+            parent.style.position = 'relative'; 
             parent.appendChild(canvas);
 
             const tempImg = new Image();
