@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.summary-thumbnail.img-wrapper img').forEach(img => {
+    document.querySelectorAll('.summary-thumbnail-image img').forEach(img => {
         let isAnimating = false;
 
         const applyPixelation = () => {
             if (isAnimating) return;
             isAnimating = true;
 
-            const parent = img.closest('.summary-thumbnail.img-wrapper');
+            const parent = img.closest('.summary-thumbnail-image');
             if (!parent) return;
 
             const canvas = document.createElement("canvas");
