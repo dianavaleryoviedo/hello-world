@@ -1,57 +1,79 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.sqs-block-summary-v2 .img-wrapper img').forEach(img => {
+    // Target the parent container (.summary-thumbnail-outer-container)
+    const containers = document.querySelectorAll('.summary-thumbnail-outer-container');
+
+    containers.forEach(container => {
         let isAnimating = false;
 
-        const applyPixelation = () => {
-            if (isAnimating) return;
-            isAnimating = true;
+        container.addEventListener("mouseenter", () => {
+            // Target all images inside the hovered container
+            const images = container.querySelectorAll('img.summary-thumbnail-image, img.summary-thumbnail-image-alternate');
+            console.log("Hover triggered on container. Found images:", images.length);
 
-            const parent = img.closest('.img-wrapper');
-            if (!parent) return;
+            images.forEach(img => {
+                if (isAnimating) return;
+                isAnimating = true;
+                console.log("Hover effect triggered on image:", img.src);
 
-            const canvas = document.createElement("canvas");
-            canvas.classList.add("pixelation-canvas");
+                const parent = img.parentNode;
+                if (!parent) {
+                    console.error("Parent not found for image:", img.src);
+                    return;
+                }
 
-            const ctx = canvas.getContext("2d");
-            canvas.width = img.offsetWidth;
-            canvas.height = img.offsetHeight;
-            ctx.imageSmoothingEnabled = false;
+                // Create canvas for pixelation effect
+                const canvas = document.createElement("canvas");
+                canvas.classList.add("pixelation-canvas");
+                console.log("Canvas created:", canvas);
 
-            parent.appendChild(canvas);
+                const ctx = canvas.getContext("2d");
+                canvas.width = img.offsetWidth;
+                canvas.height = img.offsetHeight;
+                ctx.imageSmoothingEnabled = false;
 
-            const tempImg = new Image();
-            tempImg.crossOrigin = "anonymous";
-            tempImg.src = img.src;
+                parent.style.position = 'relative'; // Ensure parent is positioned
+                parent.appendChild(canvas);
+                console.log("Canvas added to parent:", parent);
 
-            const pixelate = (factor) => {
-                const w = canvas.width * factor;
-                const h = canvas.height * factor;
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(tempImg, 0, 0, w, h);
-                ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
-            };
+                const tempImg = new Image();
+                tempImg.crossOrigin = "anonymous";
+                tempImg.src = img.src;
 
-            tempImg.onload = function () {
-                pixelate(0.08);
-                setTimeout(() => {
-                    pixelate(0.1);
+                const pixelate = (factor) => {
+                    const w = canvas.width * factor;
+                    const h = canvas.height * factor;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(tempImg, 0, 0, w, h);
+                    ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
+                };
+
+                tempImg.onload = function () {
+                    console.log("Image loaded, starting pixelation effect");
+                    pixelate(0.08);
                     setTimeout(() => {
-                        pixelate(0.05);
+                        pixelate(0.1);
                         setTimeout(() => {
-                            canvas.remove();
-                            isAnimating = false;
-                        }, 300); // remove after animation
-                    }, 100);
-                }, 150);
-            };
+                            pixelate(0.05);
+                            setTimeout(() => {
+                                console.log("Removing canvas");
+                                canvas.remove();
+                                isAnimating = false;
+                            }, 300);
+                        }, 100);
+                    }, 150);
+                };
 
-            tempImg.onerror = function () {
-                console.error("Failed to load image: " + img.src);
-                canvas.remove();
-                isAnimating = false;
-            };
-        };
+                tempImg.onerror = function () {
+                    console.error("Failed to load image:", img.src);
+                    canvas.remove();
+                    isAnimating = false;
+                };
+            });
+        });
 
-        img.addEventListener("mouseenter", applyPixelation);
+        container.addEventListener("mouseleave", () => {
+            // Reset animation flag when mouse leaves the container
+            isAnimating = false;
+        });
     });
 });
