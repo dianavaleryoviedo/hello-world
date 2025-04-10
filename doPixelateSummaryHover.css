@@ -1,11 +1,18 @@
-  .sqs-block-summary-v2 .img-wrapper {
-    position: relative;
-  }
-
   .pixelation-canvas {
     position: absolute;
     top: 0;
-    left: 0;
+    margin-left:auto;
+    margin-right:auto;
     pointer-events: none;
     z-index: 2;
+  }
+
+  .summary-thumbnail-outer-container {
+    position: relative;
+  }
+
+  /* Ensure images inside summary-thumbnail allow absolute positioning */
+  .summary-thumbnail img {
+    position: relative;
+    display: block;
   }
