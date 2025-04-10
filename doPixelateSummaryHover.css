@@ -1,11 +1,14 @@
-  .summary-thumbnail-image {
-    position: relative;
-  }
-
   .pixelation-canvas {
     position: absolute;
     top: 0;
     left: 0;
     pointer-events: none;
     z-index: 2;
+  }
+
+  /* Ensure image containers allow absolute positioning */
+  img.summary-thumbnail-image,
+  img.summary-thumbnail-image-alternate {
+    position: relative;
+    display: block;
   }
