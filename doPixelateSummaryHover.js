@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.sqs-block-summary-v2 img').forEach(img => {
+    document.querySelectorAll('.summary-thumbnail-outer-container img').forEach(img => {
         let isAnimating = false;
 
         const applyPixelation = () => {
