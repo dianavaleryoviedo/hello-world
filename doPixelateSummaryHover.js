@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.sqs-block-summary-v2 .img-wrapper img').forEach(img => {
+    document.querySelectorAll('.summary-thumbnail.img-wrapper img').forEach(img => {
         let isAnimating = false;
 
         const applyPixelation = () => {
             if (isAnimating) return;
             isAnimating = true;
 
-            const parent = img.closest('.img-wrapper');
+            const parent = img.closest('.summary-thumbnail.img-wrapper');
             if (!parent) return;
 
             const canvas = document.createElement("canvas");
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(() => {
                             canvas.remove();
                             isAnimating = false;
-                        }, 300); // remove after animation
+                        }, 300);
                     }, 100);
                 }, 150);
             };
