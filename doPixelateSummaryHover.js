@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.summary-thumbnail-outer-container img').forEach(img => {
+    document.querySelectorAll('.sqs-block-summary-v2 .img-wrapper img').forEach(img => {
         let isAnimating = false;
 
         const applyPixelation = () => {
             if (isAnimating) return;
             isAnimating = true;
 
-            const parent = img.parentNode;
+            const parent = img.closest('.img-wrapper');
             if (!parent) return;
 
             const canvas = document.createElement("canvas");
@@ -17,8 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
             canvas.height = img.offsetHeight;
             ctx.imageSmoothingEnabled = false;
 
-            // Ensure the parent element is positioned relative
-            parent.style.position = 'relative'; 
             parent.appendChild(canvas);
 
             const tempImg = new Image();
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(() => {
                             canvas.remove();
                             isAnimating = false;
-                        }, 300);
+                        }, 300); // remove after animation
                     }, 100);
                 }, 150);
             };
