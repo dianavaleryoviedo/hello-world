@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Removing canvas");
             canvas.remove();
             isAnimating = false;
-        }, 100);
-    }, 300);
+        }, 200);
+    }, 0);
 };
  
                  tempImg.onerror = function () {
