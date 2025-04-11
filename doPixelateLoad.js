@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
          };
  
          tempImg.onload = function () {
-             pixelate(0.08);
+             pixelate(0.02);
              setTimeout(() => {
-                 pixelate(0.05);
+                 pixelate(0.02);
                  setTimeout(() => {
-                     pixelate(0.05);
+                     pixelate(0.02);
                      setTimeout(() => {
                          canvas.remove();
                          img.style.visibility = "visible";
