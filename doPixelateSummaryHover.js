@@ -1,1 +1,76 @@
-function _0x6703(_0x416eca,_0x5733e6){const _0x313b0c=_0x313b();return _0x6703=function(_0x67039b,_0x36c5b2){_0x67039b=_0x67039b-0x189;let _0xa280e2=_0x313b0c[_0x67039b];return _0xa280e2;},_0x6703(_0x416eca,_0x5733e6);}function _0x313b(){const _0x4f44db=['pixelation-canvas','.summary-thumbnail-outer-container','length','imageSmoothingEnabled','style','onerror','drawImage','852493IEgcGC','add','error','querySelectorAll','71975doDEHw','log','canvas','offsetHeight','1379240dKRUFo','26878944QKxjdz','Parent\x20not\x20found\x20for\x20image:','remove','4817232akmRdk','getContext','Canvas\x20created:','crossOrigin','width','src','clearRect','354juWwQY','createElement','onload','Image\x20loaded,\x20starting\x20pixelation\x20effect','offsetWidth','addEventListener','img.summary-thumbnail-image,\x20img.summary-thumbnail-image-alternate','Hover\x20effect\x20triggered\x20on\x20image:','relative','1430016cXzxOm','mouseenter','DOMContentLoaded','2421951TICLCl','height','parentNode','position','anonymous','classList','forEach'];_0x313b=function(){return _0x4f44db;};return _0x313b();}const _0x5431eb=_0x6703;(function(_0x21944d,_0x5c4dcc){const _0x58f44d=_0x6703,_0x365f23=_0x21944d();while(!![]){try{const _0xee0b6e=-parseInt(_0x58f44d(0x1b0))/0x1+parseInt(_0x58f44d(0x19f))/0x2+-parseInt(_0x58f44d(0x1a2))/0x3+-parseInt(_0x58f44d(0x18b))/0x4+-parseInt(_0x58f44d(0x1b4))/0x5*(parseInt(_0x58f44d(0x196))/0x6)+-parseInt(_0x58f44d(0x18f))/0x7+parseInt(_0x58f44d(0x18c))/0x8;if(_0xee0b6e===_0x5c4dcc)break;else _0x365f23['push'](_0x365f23['shift']());}catch(_0x41190c){_0x365f23['push'](_0x365f23['shift']());}}}(_0x313b,0x82127),document['addEventListener'](_0x5431eb(0x1a1),()=>{const _0x370b67=_0x5431eb,_0x2e8a03=document['querySelectorAll'](_0x370b67(0x1aa));_0x2e8a03[_0x370b67(0x1a8)](_0x5edb37=>{const _0x37ed4c=_0x370b67;let _0x53606f=![];_0x5edb37['addEventListener'](_0x37ed4c(0x1a0),()=>{const _0x1f3d50=_0x37ed4c,_0xada92c=_0x5edb37[_0x1f3d50(0x1b3)](_0x1f3d50(0x19c));console[_0x1f3d50(0x1b5)]('Hover\x20triggered\x20on\x20container.\x20Found\x20images:',_0xada92c[_0x1f3d50(0x1ab)]),_0xada92c[_0x1f3d50(0x1a8)](_0x4d32b2=>{const _0xed81e7=_0x1f3d50;if(_0x53606f)return;_0x53606f=!![],console[_0xed81e7(0x1b5)](_0xed81e7(0x19d),_0x4d32b2[_0xed81e7(0x194)]);const _0x2db6f6=_0x4d32b2[_0xed81e7(0x1a4)];if(!_0x2db6f6){console['error'](_0xed81e7(0x18d),_0x4d32b2[_0xed81e7(0x194)]);return;}const _0x188a91=document[_0xed81e7(0x197)](_0xed81e7(0x189));_0x188a91[_0xed81e7(0x1a7)][_0xed81e7(0x1b1)](_0xed81e7(0x1a9)),console[_0xed81e7(0x1b5)](_0xed81e7(0x191),_0x188a91);const _0x12ffc0=_0x188a91[_0xed81e7(0x190)]('2d');_0x188a91['width']=_0x4d32b2[_0xed81e7(0x19a)],_0x188a91[_0xed81e7(0x1a3)]=_0x4d32b2[_0xed81e7(0x18a)],_0x12ffc0[_0xed81e7(0x1ac)]=![],_0x2db6f6[_0xed81e7(0x1ad)][_0xed81e7(0x1a5)]=_0xed81e7(0x19e),_0x2db6f6['appendChild'](_0x188a91),console[_0xed81e7(0x1b5)]('Canvas\x20added\x20to\x20parent:',_0x2db6f6);const _0x22d78a=new Image();_0x22d78a[_0xed81e7(0x192)]=_0xed81e7(0x1a6),_0x22d78a[_0xed81e7(0x194)]=_0x4d32b2['src'];const _0x16f42c=_0x4994ff=>{const _0x3aae00=_0xed81e7,_0x131a8e=_0x188a91[_0x3aae00(0x193)]*_0x4994ff,_0x478b62=_0x188a91['height']*_0x4994ff;_0x12ffc0[_0x3aae00(0x195)](0x0,0x0,_0x188a91[_0x3aae00(0x193)],_0x188a91[_0x3aae00(0x1a3)]),_0x12ffc0[_0x3aae00(0x1af)](_0x22d78a,0x0,0x0,_0x131a8e,_0x478b62),_0x12ffc0[_0x3aae00(0x1af)](_0x188a91,0x0,0x0,_0x131a8e,_0x478b62,0x0,0x0,_0x188a91[_0x3aae00(0x193)],_0x188a91[_0x3aae00(0x1a3)]);};_0x22d78a[_0xed81e7(0x198)]=function(){const _0x163ae2=_0xed81e7;console['log'](_0x163ae2(0x199)),_0x16f42c(0.05),setTimeout(()=>{_0x16f42c(0.1),setTimeout(()=>{_0x16f42c(0.08),setTimeout(()=>{const _0x4a5987=_0x6703;console[_0x4a5987(0x1b5)]('Removing\x20canvas'),_0x188a91[_0x4a5987(0x18e)](),_0x53606f=![];},0xc8);},0x64);},0xc8);},_0x22d78a[_0xed81e7(0x1ae)]=function(){const _0x15d580=_0xed81e7;console[_0x15d580(0x1b2)]('Failed\x20to\x20load\x20image:',_0x4d32b2[_0x15d580(0x194)]),_0x188a91['remove'](),_0x53606f=![];};});}),_0x5edb37[_0x37ed4c(0x19b)]('mouseleave',()=>{_0x53606f=![];});});}));
+document.addEventListener("DOMContentLoaded", () => {
+     // Target the parent container (.summary-thumbnail-outer-container)
+     const containers = document.querySelectorAll('.summary-thumbnail-outer-container');
+ 
+     containers.forEach(container => {
+         let isAnimating = false;
+ 
+         container.addEventListener("mouseenter", () => {
+             // Target all images inside the hovered container
+             const images = container.querySelectorAll('img.summary-thumbnail-image, img.summary-thumbnail-image-alternate');
+             console.log("Hover triggered on container. Found images:", images.length);
+ 
+             images.forEach(img => {
+                 if (isAnimating) return;
+                 isAnimating = true;
+                 console.log("Hover effect triggered on image:", img.src);
+ 
+                 const parent = img.parentNode;
+                 if (!parent) {
+                     console.error("Parent not found for image:", img.src);
+                     return;
+                 }
+ 
+                 // Create canvas for pixelation effect
+                 const canvas = document.createElement("canvas");
+                 canvas.classList.add("pixelation-canvas");
+                 console.log("Canvas created:", canvas);
+ 
+                 const ctx = canvas.getContext("2d");
+                 canvas.width = img.offsetWidth;
+                 canvas.height = img.offsetHeight;
+                 ctx.imageSmoothingEnabled = false;
+ 
+                 parent.style.position = 'relative'; // Ensure parent is positioned
+                 parent.appendChild(canvas);
+                 console.log("Canvas added to parent:", parent);
+ 
+                 const tempImg = new Image();
+                 tempImg.crossOrigin = "anonymous";
+                 tempImg.src = img.src;
+ 
+                 const pixelate = (factor) => {
+                     const w = canvas.width * factor;
+                     const h = canvas.height * factor;
+                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+                     ctx.drawImage(tempImg, 0, 0, w, h);
+                     ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
+                 };
+ 
+                 tempImg.onload = function () {
+    console.log("Image loaded, starting pixelation effect");
+    pixelate(0.02); // Step 1: initial pixelation
+    setTimeout(() => {
+        pixelate(0.015); // Step 2: final pixelation
+        setTimeout(() => {
+            console.log("Removing canvas");
+            canvas.remove();
+            isAnimating = false;
+        }, 100);
+    }, 300);
+};
+ 
+                 tempImg.onerror = function () {
+                     console.error("Failed to load image:", img.src);
+                     canvas.remove();
+                     isAnimating = false;
+                 };
+             });
+         });
+ 
+         container.addEventListener("mouseleave", () => {
+             // Reset animation flag when mouse leaves the container
+             isAnimating = false;
+         });
+     });
+ });
