@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Image loaded, starting pixelation effect");
     pixelate(0.05); // Step 1: initial pixelation
     setTimeout(() => {
-        pixelate(0.1); // Step 2: final pixelation
+        pixelate(0.06); // Step 2: final pixelation
         setTimeout(() => {
             console.log("Removing canvas");
             canvas.remove();
