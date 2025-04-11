@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
          };
  
          tempImg.onload = function () {
-    pixelate(0.001); // very pixelated
+    pixelate(0.01); // very pixelated
     setTimeout(() => {
-        pixelate(0.001); // less pixelated
+        pixelate(0.01); // less pixelated
         setTimeout(() => {
             canvas.remove();
             img.style.visibility = "visible";
