@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             canvas.remove();
             img.style.visibility = "visible";
         }, 150);
-    }, 150);
+    }, 0);
 };
  
          tempImg.onerror = function () {
