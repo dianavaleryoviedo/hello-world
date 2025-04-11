@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log("Removing canvas");
             canvas.remove();
             isAnimating = false;
-        }, 280);
+        }, 300);
     }, 0);
 };
  
