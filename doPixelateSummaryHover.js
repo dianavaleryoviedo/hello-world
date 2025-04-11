@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
  
                  tempImg.onload = function () {
     console.log("Image loaded, starting pixelation effect");
-    pixelate(0.03); // Step 1: initial pixelation
+    pixelate(0.025); // Step 1: initial pixelation
     setTimeout(() => {
-        pixelate(0.03); // Step 2: final pixelation
+        pixelate(0.025); // Step 2: final pixelation
         setTimeout(() => {
             console.log("Removing canvas");
             canvas.remove();
