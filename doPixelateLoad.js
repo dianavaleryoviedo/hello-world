@@ -38,18 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
          };
  
          tempImg.onload = function () {
-             pixelate(0.02);
-             setTimeout(() => {
-                 pixelate(0.02);
-                 setTimeout(() => {
-                     pixelate(0.02);
-                     setTimeout(() => {
-                         canvas.remove();
-                         img.style.visibility = "visible";
-                     }, 100);
-                 }, 100);
-             }, 100);
-         };
+    pixelate(0.02); // very pixelated
+    setTimeout(() => {
+        pixelate(0.06); // less pixelated
+        setTimeout(() => {
+            canvas.remove();
+            img.style.visibility = "visible";
+        }, 150);
+    }, 150);
+};
  
          tempImg.onerror = function () {
              console.error("Failed to load image: " + img.src);
