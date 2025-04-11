@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             canvas.remove();
             img.style.visibility = "visible";
-        }, 150);
+        }, 300);
     }, 0);
 };
  
