@@ -2,7 +2,7 @@
     position: absolute;
     top: 0;
     left:-10px;
-    transform:scale(1.1);
+    transform:scale(1.05);
     pointer-events: none;
     z-index: 2;
   }
