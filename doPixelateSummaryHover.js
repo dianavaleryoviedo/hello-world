@@ -1,76 +1,122 @@
+class Mosaic {
+  constructor(canvas, img, blockSize = 40) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext("2d");
+    this.img = img;
+    this.blockSize = blockSize;
+    this.blocks = [];
+  }
+
+  createBlocks() {
+    const cols = Math.ceil(this.canvas.width / this.blockSize);
+    const rows = Math.ceil(this.canvas.height / this.blockSize);
+    this.blocks = [];
+
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        const sx = x * this.blockSize;
+        const sy = y * this.blockSize;
+        this.blocks.push({ sx, sy, delay: Math.random() * 400 });
+      }
+    }
+  }
+
+  animateIn() {
+    this.createBlocks();
+
+    const scaleX = this.img.naturalWidth / this.canvas.width;
+    const scaleY = this.img.naturalHeight / this.canvas.height;
+
+    this.blocks.forEach(block => {
+      setTimeout(() => {
+        this.ctx.drawImage(
+          this.img,
+          block.sx * scaleX,
+          block.sy * scaleY,
+          this.blockSize * scaleX,
+          this.blockSize * scaleY,
+          block.sx,
+          block.sy,
+          this.blockSize,
+          this.blockSize
+        );
+      }, block.delay);
+    });
+  }
+
+  clear() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-     // Target the parent container (.summary-thumbnail-outer-container)
-     const containers = document.querySelectorAll('.summary-thumbnail-outer-container');
- 
-     containers.forEach(container => {
-         let isAnimating = false;
- 
-         container.addEventListener("mouseenter", () => {
-             // Target all images inside the hovered container
-             const images = container.querySelectorAll('img.summary-thumbnail-image, img.summary-thumbnail-image-alternate');
-             console.log("Hover triggered on container. Found images:", images.length);
- 
-             images.forEach(img => {
-                 if (isAnimating) return;
-                 isAnimating = true;
-                 console.log("Hover effect triggered on image:", img.src);
- 
-                 const parent = img.parentNode;
-                 if (!parent) {
-                     console.error("Parent not found for image:", img.src);
-                     return;
-                 }
- 
-                 // Create canvas for pixelation effect
-                 const canvas = document.createElement("canvas");
-                 canvas.classList.add("pixelation-canvas");
-                 console.log("Canvas created:", canvas);
- 
-                 const ctx = canvas.getContext("2d");
-                 canvas.width = img.offsetWidth;
-                 canvas.height = img.offsetHeight;
-                 ctx.imageSmoothingEnabled = false;
- 
-                 parent.style.position = 'relative'; // Ensure parent is positioned
-                 parent.appendChild(canvas);
-                 console.log("Canvas added to parent:", parent);
- 
-                 const tempImg = new Image();
-                 tempImg.crossOrigin = "anonymous";
-                 tempImg.src = img.src;
- 
-                 const pixelate = (factor) => {
-                     const w = canvas.width * factor;
-                     const h = canvas.height * factor;
-                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                     ctx.drawImage(tempImg, 0, 0, w, h);
-                     ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
-                 };
- 
-                 tempImg.onload = function () {
-    console.log("Image loaded, starting pixelation effect");
-    pixelate(0.025); // Step 1: initial pixelation
-    setTimeout(() => {
-        pixelate(0.025); // Step 2: final pixelation
-        setTimeout(() => {
-            console.log("Removing canvas");
-            canvas.remove();
-            isAnimating = false;
-        }, 300);
-    }, 0);
-};
- 
-                 tempImg.onerror = function () {
-                     console.error("Failed to load image:", img.src);
-                     canvas.remove();
-                     isAnimating = false;
-                 };
-             });
-         });
- 
-         container.addEventListener("mouseleave", () => {
-             // Reset animation flag when mouse leaves the container
-             isAnimating = false;
-         });
-     });
- });
+  const containers = document.querySelectorAll(".summary-thumbnail-outer-container");
+
+  containers.forEach(container => {
+    const img = container.querySelector("img.summary-thumbnail-image");
+    if (!img || container.dataset.mosaicified) return;
+
+    container.dataset.mosaicified = "true";
+    container.style.position = "relative";
+
+    const canvas = document.createElement("canvas");
+    canvas.classList.add("pixelation-canvas");
+    container.appendChild(canvas);
+
+    const setCanvasSize = () => {
+      const imgRect = img.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const width = imgRect.width;
+      const height = imgRect.height;
+
+      // Match canvas drawing size
+      canvas.width = width;
+      canvas.height = height;
+
+      // Match visual size and placement exactly
+      canvas.style.position = "absolute";
+      canvas.style.top = (imgRect.top - containerRect.top) + "px";
+      canvas.style.left = (imgRect.left - containerRect.left) + "px";
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+      canvas.style.pointerEvents = "none";
+      canvas.style.zIndex = "2";
+      canvas.style.opacity = "0"; // Canvas starts hidden
+      canvas.style.transition = "opacity 0.3s ease";
+    };
+
+    if (img.complete) {
+      setCanvasSize();
+    } else {
+      img.onload = setCanvasSize;
+    }
+
+    const mosaic = new Mosaic(canvas, img, 20);
+    const animationDuration = 1000; // Duration of the animation in milliseconds (2 seconds)
+
+    // Function to trigger pixelation animation
+    const triggerPixelation = () => {
+      mosaic.clear();
+      canvas.style.opacity = "1"; // Make canvas visible
+      mosaic.animateIn();
+
+      // Hide the canvas after the animation duration
+      setTimeout(() => {
+        canvas.style.opacity = "0"; // Fade out canvas
+      }, animationDuration);
+    };
+
+    // Trigger pixelation on hover (mouseenter)
+    container.addEventListener("mouseenter", () => {
+      triggerPixelation(); // Run the pixelation animation
+    });
+
+    // Reset effect when mouse leaves the area (mouseleave)
+    container.addEventListener("mouseleave", () => {
+      triggerPixelation(); // Run the pixelation animation again
+    });
+
+    // Update canvas size on image load and window resize
+    new ResizeObserver(setCanvasSize).observe(img);
+  });
+});
