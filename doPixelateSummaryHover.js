@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const mosaic = new Mosaic(canvas, img, 50);
-    const animationDuration = 1250; // Duration of the animation in milliseconds (2 seconds)
+    const animationDuration = 1350; // Duration of the animation in milliseconds (2 seconds)
 
     // Function to trigger pixelation animation
     const triggerPixelation = () => {
