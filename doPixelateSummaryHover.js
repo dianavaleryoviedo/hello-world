@@ -50,10 +50,10 @@ class Mosaic {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const containers = document.querySelectorAll(".summary-thumbnail-outer-container");
+  const containers = document.querySelectorAll("#collection-67d26e96140f381e64efc33a .summary-thumbnail-outer-container");
 
   containers.forEach(container => {
-    const img = container.querySelector("img.summary-thumbnail-image");
+    const img = container.querySelector("#collection-67d26e96140f381e64efc33a img.summary-thumbnail-image");
     if (!img || container.dataset.mosaicified) return;
 
     container.dataset.mosaicified = "true";
