@@ -21,12 +21,3 @@
 .summary-thumbnail-container {
   overflow: hidden;
 }
-
-  
-.pixelation-overlay {
-    height: 100% !important;
-    width: 110% !important;
-    border: 0px solid !important;
-    border-radius: 0px !important;
-    left: -5%!important;
-}
