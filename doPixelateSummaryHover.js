@@ -1,122 +1,108 @@
-class Mosaic {
-  constructor(canvas, img, blockSize = 40) {
-    this.canvas = canvas;
-    this.ctx = canvas.getContext("2d");
-    this.img = img;
-    this.blockSize = blockSize;
-    this.blocks = [];
-  }
+(function () {
+  console.log("Pixelation script with MutationObserver loaded!");
 
-  createBlocks() {
-    const cols = Math.ceil(this.canvas.width / this.blockSize);
-    const rows = Math.ceil(this.canvas.height / this.blockSize);
-    this.blocks = [];
+  const observer = new MutationObserver((mutationsList, observer) => {
+    const containers = document.querySelectorAll(".summary-thumbnail-container");
 
-    for (let y = 0; y < rows; y++) {
-      for (let x = 0; x < cols; x++) {
-        const sx = x * this.blockSize;
-        const sy = y * this.blockSize;
-        this.blocks.push({ sx, sy, delay: Math.random() * 400 });
+    containers.forEach((container, i) => {
+      const alreadyProcessed = container.getAttribute("data-pixelation-applied");
+      if (alreadyProcessed) return;
+
+      const alternateImg = container.querySelector("img.summary-thumbnail-image-alternate");
+
+      if (!alternateImg) return;
+
+      const imageUrl = alternateImg.src || alternateImg.getAttribute("data-src");
+
+      if (!imageUrl) {
+        console.warn(`No image URL found in container #${i}`, alternateImg);
+        return;
       }
-    }
-  }
 
-  animateIn() {
-    this.createBlocks();
+      console.log(`Setting up pixelation effect for container #${i}`);
 
-    const scaleX = this.img.naturalWidth / this.canvas.width;
-    const scaleY = this.img.naturalHeight / this.canvas.height;
+      // Create a wrapper around the pixelation overlay
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("pixelation-wrapper");
 
-    this.blocks.forEach(block => {
-      setTimeout(() => {
-        this.ctx.drawImage(
-          this.img,
-          block.sx * scaleX,
-          block.sy * scaleY,
-          this.blockSize * scaleX,
-          this.blockSize * scaleY,
-          block.sx,
-          block.sy,
-          this.blockSize,
-          this.blockSize
-        );
-      }, block.delay);
+      // Style the wrapper to match the container's width and hide overflow
+      Object.assign(wrapper.style, {
+        position: "relative",
+        width: "100%", // Match the width of the .summary-thumbnail-container
+        height: "100%",
+        overflow: "hidden", // Hide overflow to contain the pixelation canvas
+      });
+
+      // Create the pixelation overlay (the canvas itself)
+      const overlay = document.createElement("div");
+      overlay.classList.add("pixelation-overlay");
+
+      Object.assign(overlay.style, {
+        position: "absolute",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        display: "grid",
+        gridTemplateColumns: "repeat(5, 1fr)",
+        gridTemplateRows: "repeat(5, 1fr)",
+        zIndex: "2",
+        pointerEvents: "none",
+      });
+
+      const tiles = [];
+      const maxDelay = 400;
+      const transitionTime = 200;
+
+      for (let y = 0; y < 5; y++) {
+        for (let x = 0; x < 5; x++) {
+          const delay = Math.floor(Math.random() * maxDelay);
+          const tile = document.createElement("div");
+
+          Object.assign(tile.style, {
+            backgroundImage: `url("${imageUrl}")`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "500% 500%",  // Ensure the image fills the tile without distortion.
+            backgroundPosition: `${x * 25}% ${y * 25}%`,
+            transition: `opacity ${transitionTime}ms ${delay}ms`,
+            opacity: "0",
+            width: "100%",
+            height: "100%",
+          });
+
+          // Add the "tile" class
+          tile.classList.add("tile");
+
+          overlay.appendChild(tile);
+          tiles.push(tile);
+        }
+      }
+
+      // Append the overlay to the wrapper
+      wrapper.appendChild(overlay);
+      
+      // Append the wrapper to the container
+      container.style.position = "relative";
+      container.appendChild(wrapper);
+      container.setAttribute("data-pixelation-applied", "true");
+
+      container.addEventListener("mouseenter", () => {
+        tiles.forEach(tile => (tile.style.opacity = "1"));
+      });
+
+      container.addEventListener("mouseleave", () => {
+        tiles.forEach(tile => (tile.style.opacity = "0"));
+      });
     });
-  }
-
-  clear() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const containers = document.querySelectorAll("#collection-67d26e96140f381e64efc33a .summary-thumbnail-outer-container");
-
-  containers.forEach(container => {
-    const img = container.querySelector("#collection-67d26e96140f381e64efc33a img.summary-thumbnail-image, #collection-67d26e96140f381e64efc33a img.summary-thumbnail-image-alternate");
-    if (!img || container.dataset.mosaicified) return;
-
-    container.dataset.mosaicified = "true";
-    container.style.position = "relative";
-
-    const canvas = document.createElement("canvas");
-    canvas.classList.add("pixelation-canvas");
-    container.appendChild(canvas);
-
-    const setCanvasSize = () => {
-      const imgRect = img.getBoundingClientRect();
-      const containerRect = container.getBoundingClientRect();
-      const width = imgRect.width;
-      const height = imgRect.height;
-
-      // Match canvas drawing size
-      canvas.width = width;
-      canvas.height = height;
-
-      // Match visual size and placement exactly
-      canvas.style.position = "absolute";
-      canvas.style.top = (imgRect.top - containerRect.top) + "px";
-      canvas.style.left = (imgRect.left - containerRect.left) + "px";
-      canvas.style.width = width + "px";
-      canvas.style.height = height + "px";
-      canvas.style.pointerEvents = "none";
-      canvas.style.zIndex = "2";
-      canvas.style.opacity = "0"; // Canvas starts hidden
-      canvas.style.transition = "opacity 0.3s ease";
-    };
-
-    if (img.complete) {
-      setCanvasSize();
-    } else {
-      img.onload = setCanvasSize;
-    }
-
-    const mosaic = new Mosaic(canvas, img, 50);
-    const animationDuration = 1400; // Duration of the animation in milliseconds (2 seconds)
-
-    // Function to trigger pixelation animation
-    const triggerPixelation = () => {
-      mosaic.clear();
-      canvas.style.opacity = "1"; // Make canvas visible
-      mosaic.animateIn();
-
-      // Hide the canvas after the animation duration
-      setTimeout(() => {
-        canvas.style.opacity = "0"; // Fade out canvas
-      }, animationDuration);
-    };
-
-    // Trigger pixelation on hover (mouseenter)
-    container.addEventListener("mouseenter", () => {
-      triggerPixelation(); // Run the pixelation animation
-    });
-
-    // Reset effect when mouse leaves the area (mouseleave)
-    container.addEventListener("mouseleave", () => {
-      triggerPixelation(); // Run the pixelation animation again
-    });
-
-    // Update canvas size on image load and window resize
-    new ResizeObserver(setCanvasSize).observe(img);
   });
-});
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
+  setTimeout(() => {
+    console.log("MutationObserver disconnected (timeout).");
+    observer.disconnect();
+  }, 5000);
+})();
