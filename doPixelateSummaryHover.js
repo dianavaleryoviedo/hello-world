@@ -40,8 +40,8 @@
       Object.assign(overlay.style, {
         position: "absolute",
         top: "0",
-        left: "0",
-        width: "100%",
+        left: "-5%",
+        width: "110%",
         height: "100%",
         display: "grid",
         gridTemplateColumns: "repeat(5, 1fr)",
