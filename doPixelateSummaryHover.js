@@ -21,19 +21,19 @@
 
       console.log(`Setting up pixelation effect for container #${i}`);
 
-      // Create a wrapper around the pixelation overlay
+    
       const wrapper = document.createElement("div");
       wrapper.classList.add("pixelation-wrapper");
 
-      // Style the wrapper to match the container's width and hide overflow
+    
       Object.assign(wrapper.style, {
         position: "relative",
-        width: "100%", // Match the width of the .summary-thumbnail-container
+        width: "100%", 
         height: "100%",
-        overflow: "hidden", // Hide overflow to contain the pixelation canvas
+        overflow: "hidden", 
       });
 
-      // Create the pixelation overlay (the canvas itself)
+   
       const overlay = document.createElement("div");
       overlay.classList.add("pixelation-overlay");
 
@@ -62,7 +62,7 @@
           Object.assign(tile.style, {
             backgroundImage: `url("${imageUrl}")`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: "500% 500%",  // Ensure the image fills the tile without distortion.
+            backgroundSize: "500% 500%",
             backgroundPosition: `${x * 25}% ${y * 25}%`,
             transition: `opacity ${transitionTime}ms ${delay}ms`,
             opacity: "0",
@@ -70,7 +70,7 @@
             height: "100%",
           });
 
-          // Add the "tile" class
+       
           tile.classList.add("tile");
 
           overlay.appendChild(tile);
@@ -78,10 +78,10 @@
         }
       }
 
-      // Append the overlay to the wrapper
+
       wrapper.appendChild(overlay);
       
-      // Append the wrapper to the container
+   
       container.style.position = "relative";
       container.appendChild(wrapper);
       container.setAttribute("data-pixelation-applied", "true");
