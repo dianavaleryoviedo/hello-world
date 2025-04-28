@@ -7,7 +7,7 @@ const collection = document.querySelector('#collection-67d26e96140f381e64efc33a'
 // Make sure it exists
 if (collection) {
   // Find all summary-thumbnail elements inside it
-  const thumbnails = collection.querySelectorAll('.summary-thumbnail:first-of-type, .summary-thumbnail:nth-of-type(3)');
+  const thumbnails = collection.querySelectorAll('.summary-thumbnail');
 
   thumbnails.forEach(thumbnail => {
     // Create a new overlay div
